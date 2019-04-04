@@ -1,10 +1,18 @@
 import express from 'express';
+
 import { port } from '../config';
-import dbConfig from './config/db';
 import { appMiddleware } from './middlewares';
+import {
+  localStrategy,
+  jwtStrategy,
+  refreshStrategy,
+} from './helper/passport';
+import dbConfig from './config/db';
 import api from './api';
 
 const app = express();
+
+const PORT = process.env.PORT || port;
 
 // 몽구스 접속
 dbConfig();
@@ -15,7 +23,10 @@ appMiddleware(app);
 // 라우팅
 app.use('/api', api);
 
-const PORT = process.env.PORT || port;
+// strategy
+jwtStrategy();
+refreshStrategy();
+localStrategy();
 
 // express 시작
 app.listen(PORT, err => {
