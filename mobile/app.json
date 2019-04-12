@@ -1,0 +1,35 @@
+{
+  "expo": {
+    "name": "loginExample3",
+    "slug": "mobile3",
+    "scheme": "mobile3",
+    "privacy": "public",
+    "sdkVersion": "32.0.0",
+    "platforms": ["ios", "android"],
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.suhyun.example3"
+    },
+    "android": {
+      "package": "com.suhyun.example3",
+      "googleServicesFile": "./google-services.json",
+      "config": {
+        "googleSignIn": {
+          "certificateHash": "886C296C21D0C27EDD78430FE30E420A73857FB0"
+        }
+      }
+    }
+  }
+}

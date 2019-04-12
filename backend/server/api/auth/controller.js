@@ -59,6 +59,22 @@ export const register = async (req, res) => {
 
 // ========== 로그인
 export const login = (req, res) => {
+  const data = req.body;
+  const schema = Joi.object().keys({
+    email: Joi.string().email({ minDomainAtoms: 2 }).required(),
+    // 8~16 영문자, 숫자, 특수 문자 포함.
+    password: Joi.string().regex(/^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,16}/),
+  });
+  // 입력값 유효성 검사.
+  const result = Joi.validate(data, schema);
+  if (result.error) {
+    res.status(400).json({
+      error: true,
+      message: '이메일혹은 비밀번호를 확인해 주십시요.',
+    });
+    return;
+  }
+
   passport.authenticate('local', { session: false }, (err, user) => {
     if (err) {
       res.status(403).json({
@@ -66,6 +82,8 @@ export const login = (req, res) => {
         message: '대상을 찾을 수 없습니다.',
       });
     }
+
+    // console.log(req.body);
     // 토큰에 저장할 유저 정보
     const tokenUser = {
       _id: user._id,
@@ -83,10 +101,10 @@ export const login = (req, res) => {
 
       const token = jwt.sign(tokenUser, tokenSecret, tokenOptions);
       const refreshToken = jwt.sign(tokenUser, refreshTokenSecret, refreshTokenOptions);
-
-      return res.json({
+      // console.log('token', token)
+      res.json({
         error: false,
-        tokenUser,
+        userInfo: tokenUser,
         token,
         refreshToken,
       });
@@ -113,6 +131,7 @@ export const refreshToken = (req, res) => {
 export const check = async (req, res) => {
   res.json({
     error: false,
+    success: true,
     message: 'pass jwt check',
   });
 };
@@ -121,6 +140,7 @@ export const check = async (req, res) => {
 export const refreshCheck = async (req, res) => {
   res.json({
     error: false,
+    success: true,
     message: 'pass refresh check',
   });
 };

@@ -1,12 +1,10 @@
 import express from 'express';
 
 import { port } from '../config';
-import { appMiddleware } from './middlewares';
 import {
-  localStrategy,
-  jwtStrategy,
-  refreshStrategy,
-} from './helper/passport';
+  appMiddleware,
+  passport,
+} from './middlewares';
 import dbConfig from './config/db';
 import api from './api';
 
@@ -24,9 +22,10 @@ appMiddleware(app);
 app.use('/api', api);
 
 // strategy
-jwtStrategy();
-refreshStrategy();
-localStrategy();
+passport.jwtStrategy();
+passport.refreshStrategy();
+passport.localStrategy();
+passport.googleStrategy();
 
 // express 시작
 app.listen(PORT, err => {

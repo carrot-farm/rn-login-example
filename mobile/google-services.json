@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "836392984134",
+    "firebase_url": "https://expologinexample.firebaseio.com",
+    "project_id": "expologinexample",
+    "storage_bucket": "expologinexample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836392984134:android:2fee9efb5baa9d86",
+        "android_client_info": {
+          "package_name": "com.carrot.expo.example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836392984134-8r4taeuietcvbonjvfb2logqp64pg75r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCINCahZUXegY4bVwrDY6WjPu_9uDHxB54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836392984134-8r4taeuietcvbonjvfb2logqp64pg75r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836392984134:android:325ad8711a81b518",
+        "android_client_info": {
+          "package_name": "com.suhyun.example3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836392984134-8r4taeuietcvbonjvfb2logqp64pg75r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCINCahZUXegY4bVwrDY6WjPu_9uDHxB54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "836392984134-8r4taeuietcvbonjvfb2logqp64pg75r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

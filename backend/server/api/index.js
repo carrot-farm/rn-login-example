@@ -5,8 +5,9 @@ const router = new Router();
 
 router.use('/auth', auth);
 
-router.get('/', (req, res) => {
-  res.send('Hello');
+router.get('/test', (req, res) => {
+  console.log('hello');
+  res.json({ data: 'Hello' });
 });
 
 export default router;
